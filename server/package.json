@@ -1,0 +1,29 @@
+{
+  "name": "CIP",
+  "version": "1.0.0",
+  "description": "App for product registration",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.13.3",
+    "mongoose": "^4.3.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/patriciocordeiro/CIP"
+  },
+  "keywords": [
+    "angularjs",
+    "angular",
+    "material"
+  ],
+  "author": "Patricio Cordeiro and Pedro Ramos",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/patriciocordeiro/CIP/issues"
+  },
+  "homepage": "https://github.com/patriciocordeiro/CIP"
+}
