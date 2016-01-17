@@ -1,5 +1,5 @@
 module.exports = function(app, express, produtos){
 	var router = express.Router();
-	router.get('/produtos/register', produtos.register);
+	router.post('/products/register', produtos.register);
 	app.use('/', router);
 }

@@ -1,0 +1,26 @@
+<div layout="column">
+    <md-toolbar class="md-toolbar-tools">Registro de produto</md-toolbar>
+    <form name="productRegistration" novalidate ng-submit="productRegistration.$valid && vm.getProductReg(vm.newProduct)">
+        <md-card>
+            <md-card-title>
+                <h4 class="md-tilte">Informações do fabricante</h4>
+            </md-card-title>
+            <md-card-content>
+                <md-input-container class="md-block">
+                    <label>Fabricante</label>
+                    <md-select  name="fabricante" ng-model="vm.newProduct.fabricante" required>
+                        <md-option ng-repeat="fabricante in vm.fabricante" value="{{fabricante}}">
+                            {{fabricante}}
+                        </md-option>
+                    </md-select>
+<!--
+                    <div ng-messages="productRegistration.fabricante.$error">
+                        <div ng-message="required">Campo obrigatório</div>
+                    </div>
+-->
+                </md-input-container>
+            </md-card-content>
+        </md-card>
+        <md-button class="md-accent md-raised" type="submit">Cadastrar</md-button>
+    </form>
+</div>
