@@ -5,22 +5,36 @@
             <md-card-title>
                 <h4 class="md-tilte">Informações do fabricante</h4>
             </md-card-title>
-            <md-card-content>
-                <md-input-container class="md-block">
+            <md-card-content layout="column">
+                <md-input-container>
                     <label>Fabricante</label>
-                    <md-select  name="fabricante" ng-model="vm.newProduct.fabricante" required>
+                    <md-select name="fabricante" ng-model="vm.newProduct.fabricante" required>
                         <md-option ng-repeat="fabricante in vm.fabricante" value="{{fabricante}}">
                             {{fabricante}}
                         </md-option>
                     </md-select>
-<!--
-                    <div ng-messages="productRegistration.fabricante.$error">
-                        <div ng-message="required">Campo obrigatório</div>
-                    </div>
--->
+                </md-input-container>
+                <md-input-container>
+                    <label>Categoria</label>
+                    <md-select name="fabricante" ng-model="vm.newProduct.categoria" required>
+                        <md-option ng-repeat="categoria in   vm.categoria" value="{{categoria}}" ng-click="vm.getCategory(categoria)">
+                            {{categoria}}
+                        </md-option>
+                    </md-select>
+                </md-input-container>
+
+                <md-input-container>
+                    <label>Subcategoria</label>
+                    <md-select name="fabricante" ng-model="vm.newProduct.subcategoria" required>
+                        <md-option ng-repeat="subcategoria in   vm.seleSubcat.items" value="{{subcategoria}}" ng-click="vm.getCategory(categoria)">
+                            {{subcategoria}}
+                        </md-option>
+                    </md-select>
                 </md-input-container>
             </md-card-content>
         </md-card>
         <md-button class="md-accent md-raised" type="submit">Cadastrar</md-button>
+        {{vm.newProduct.categoria}}
+        {{vm.seleSubcat.items}}
     </form>
 </div>
