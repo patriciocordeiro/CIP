@@ -16,7 +16,7 @@
                 </md-input-container>
                 <md-input-container>
                     <label>Categoria</label>
-                    <md-select name="fabricante" ng-model="vm.newProduct.categoria" required>
+                    <md-select name="categoria" ng-model="vm.newProduct.categoria" required>
                         <md-option ng-repeat="categoria in   vm.categoria" value="{{categoria}}" ng-click="vm.getCategory(categoria)">
                             {{categoria}}
                         </md-option>
@@ -25,8 +25,8 @@
 
                 <md-input-container>
                     <label>Subcategoria</label>
-                    <md-select name="fabricante" ng-model="vm.newProduct.subcategoria" required>
-                        <md-option ng-repeat="subcategoria in   vm.seleSubcat.items" value="{{subcategoria}}" ng-click="vm.getCategory(categoria)">
+                    <md-select name="subcategoria" ng-model="vm.newProduct.subcategoria" required>
+                        <md-option ng-repeat="subcategoria in   vm.seleSubcat.items" value="{{subcategoria}}" ng-click="vm.getSubCategory(subcategoria)">
                             {{subcategoria}}
                         </md-option>
                     </md-select>
@@ -34,7 +34,7 @@
             </md-card-content>
         </md-card>
         <md-button class="md-accent md-raised" type="submit">Cadastrar</md-button>
-        {{vm.newProduct.categoria}}
+        {{vm.newProduct}}
         {{vm.seleSubcat.items}}
     </form>
 </div>
