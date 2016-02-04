@@ -4,7 +4,7 @@ Intelligent product registration software
 #Description
 
 Software para registrar produtos de forma dinâmica e inteligente.
-Este software será baseado em htlm e angularjs e angular material-design.
+Este software será baseado em html e angularjs e angular material-design.
 
 #Instale e rode
 Execute os comandos a seguir para rodar o projet:
