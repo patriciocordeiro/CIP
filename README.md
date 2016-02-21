@@ -15,3 +15,6 @@ Execute os comandos a seguir para rodar o projet:
     4- Rode o servidor executando o comando 'node server.js'
     5- acesse localhost:3000
 
+## Pacotes usados
+### http-status
+    * https://www.npmjs.com/package/http-status

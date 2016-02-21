@@ -9,11 +9,11 @@
             <md-card-content layout="column">
                 <md-input-container>
                     <label>Nome da categoria</label>
-                    <input name="partNumFabr" ng-model="vm.category.name" required/>
+                    <input name="partNumFabr" ng-model="vm.category._id" required/>
                 </md-input-container>
                 <md-input-container>
                     <label>Pai</label>
-                    <input name="partNumFabr" ng-model="vm.category.father" required/>
+                    <input name="partNumFabr" ng-model="vm.category.parent" required/>
                 </md-input-container>
                 <md-input-container>
                     <label>Avós</label>
@@ -25,7 +25,7 @@
                         </div>
                     </div>
                 </md-input-container>
-                <md-button class="md-accent md-raised" type="submit" ng-click="vm.submitCategory()">Cadastrar</md-button>
+                <md-button class="md-accent md-raised" type="submit" ng-click="vm.submitCategory(vm.category)">Cadastrar</md-button>
             </md-card-content>
         </md-card>
     </form>

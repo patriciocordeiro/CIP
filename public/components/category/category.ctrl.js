@@ -1,11 +1,11 @@
-(function() {
+(function () {
     'use strict';
 
-    angular.module('cipApp').controller('CatCtrl', [CatCtrl]);
+    angular.module('cipApp').controller('CatCtrl', ['CategorySrvc', CatCtrl]);
 
-    function CatCtrl() {
+    function CatCtrl(CategorySrvc) {
         var vm = this;
-        
+
         /*
             A ideia é fazer o cadastro de uma categoria para depois essa categoria ser usada para o registro do produto
             * Se a categoria for uma raiz na árvore
@@ -21,10 +21,10 @@
                 - Tudo que vier a partir dela é antepassado
                 - Ex: Apple {nome: 'Apple', pai: 'Computador', antecessor: ['Eletronicos', 'Computador', 'Apple']}
         */
-        
-        vm.category =  {
-            name: '',
-            father: '',
+
+        vm.category = {
+            _id: '',
+            parent: '',
             ancestors: []
         };
         vm.addAncestor = function (value) {
@@ -33,8 +33,16 @@
             vm.category.ancestors.push(ancestor);
             vm.ancestor = "";
         }
-        vm.submitCategory = function(category){
+        vm.submitCategory = function (category) {
             console.log(category);
+
+            CategorySrvc.register(category);
+
+            /*vm.category = {
+                name: '',
+                father: '',
+                ancestors: []
+            };*/
         }
     }
 })();

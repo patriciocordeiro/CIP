@@ -11,5 +11,17 @@ angular.module('cipApp').service('httpSrvc', function($resource) {
                 method: 'POST',
                 isArray: false
             }
-        })
+        });
+    this.registerCat = $resource('http://localhost:3000/category/:acao/', {
+            acao: '@acao'
+        }, {
+            'get': {
+                method: 'GET',
+                isArray: true
+            },
+            'save': {
+                method: 'POST',
+                isArray: false
+            }
+        });
 })

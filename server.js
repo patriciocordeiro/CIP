@@ -39,6 +39,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 /*Routes*/
 require('./routes/products.routes')(app, express, productsConfig);
+require('./routes/category.routes')(app, express);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
