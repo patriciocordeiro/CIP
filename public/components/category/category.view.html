@@ -1,0 +1,32 @@
+<div layout="column">
+    <md-toolbar class="md-toolbar-tools">Registro de produto</md-toolbar>
+    <form name="productRegistration" novalidate ng-submit="productRegistration.$valid && vm.getProductReg(vm.newProduct)">
+        <md-card>
+            <md-card-title>
+                <h4 class="md-tilte">Cadastro de categoria
+                </h4>
+            </md-card-title>
+            <md-card-content layout="column">
+                <md-input-container>
+                    <label>Nome da categoria</label>
+                    <input name="partNumFabr" ng-model="vm.category.name" required/>
+                </md-input-container>
+                <md-input-container>
+                    <label>Pai</label>
+                    <input name="partNumFabr" ng-model="vm.category.father" required/>
+                </md-input-container>
+                <md-input-container>
+                    <label>Avós</label>
+                    <input name="partNumFabr" ng-model="vm.ancestor"/>
+                    <md-button class="md-raised" ng-click="vm.addAncestor(vm.ancestor)">Adicionar</md-button>
+                    <div class="md-list-item-text" layout="column">
+                        <div ng-repeat="ancestor in vm.category.ancestors track by $index">
+                            <h3>{{ancestor}}</h3>
+                        </div>
+                    </div>
+                </md-input-container>
+                <md-button class="md-accent md-raised" type="submit" ng-click="vm.submitCategory()">Cadastrar</md-button>
+            </md-card-content>
+        </md-card>
+    </form>
+</div>

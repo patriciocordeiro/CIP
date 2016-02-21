@@ -13,6 +13,11 @@ angular.module("cipApp", ['ui.router', 'ngMaterial', 'ngResource'])
                 url: "/home",
                 templateUrl: 'components/home/home.view.html',
             })
+            .state('app.category', {
+                url: '/category',
+                templateUrl: 'components/category/category.view.html',
+                controller: 'CatCtrl as vm'
+            })
             .state('app.register', {
                 url: '/register',
                 templateUrl: 'components/products/register.view.html',
