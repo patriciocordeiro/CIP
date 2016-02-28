@@ -1,6 +1,6 @@
 <div layout="column">
     <md-toolbar class="md-toolbar-tools">Registro de produto</md-toolbar>
-    <form name="productRegistration" novalidate ng-submit="productRegistration.$valid && vm.getProductReg(vm.newProduct)">
+    <!--<form name="productRegistration" novalidate ng-submit="productRegistration.$valid && vm.getProductReg(vm.newProduct)">
         <md-card>
             <md-card-title>
                 <h4 class="md-tilte">Informações do fabricante</h4>
@@ -61,5 +61,53 @@
         </md-card>
         <md-button class="md-accent md-raised" type="submit">Cadastrar</md-button>
         {{vm.newProduct}} {{vm.seleSubcat.items}}
+    </form>-->
+    <form name="productRegistration">
+        <md-card>
+            <md-card-title>
+                <h4 class="md-tilte">Informações de categoria
+                </h4>
+            </md-card-title>
+            <md-card-content layout="column">
+                <md-input-container>
+                    <label>Nome do produto</label>
+                    <input name="partNumFabr" ng-model="vm.product.name" required/>
+                </md-input-container>
+                <md-input-container>
+                    <label>Imagens do produto</label>
+                    <input name="partNumFabr" ng-model="vm.product.pictures"/>
+                </md-input-container>
+                <md-input-container>
+                    <label>Preço</label>
+                    <input name="partNumFabr" ng-model="vm.product.price.amount" required/>
+                </md-input-container>
+        </md-card>
+        <md-card>
+            <md-card-title>
+                <h4 class="md-tilte">Informações de categoria
+                </h4>
+            </md-card-title>
+            <md-card-content layout="column">
+                <md-input-container>
+                    <label>Nome da categoria</label>
+                    <input name="partNumFabr" ng-model="vm.product.category._id" required/>
+                </md-input-container>
+                <md-input-container>
+                    <label>Pai</label>
+                    <input name="partNumFabr" ng-model="vm.product.category.parent" required/>
+                </md-input-container>
+                <md-input-container>
+                    <label>Avós</label>
+                    <input name="partNumFabr" ng-model="vm.ancestor"/>
+                    <md-button class="md-raised" ng-click="vm.addAncestor(vm.ancestor)">Adicionar</md-button>
+                    <div class="md-list-item-text" layout="column">
+                        <div ng-repeat="ancestor in vm.product.category.ancestors track by $index">
+                            <h3>{{ancestor}}</h3>
+                        </div>
+                    </div>
+                </md-input-container>
+                <md-button class="md-accent md-raised" type="submit" ng-click="vm.submitProduct(vm.product)">Cadastrar</md-button>
+            </md-card-content>
+        </md-card>
     </form>
 </div>
